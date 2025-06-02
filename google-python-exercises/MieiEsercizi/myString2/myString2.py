@@ -38,10 +38,7 @@ def replaceBetweenTokens(s,x,y,z):
   # +++your code here+++
   I = lambda text,x : text.index(x) if len(text)>1 and text.find(x) != -1 else None
   
-  indX = I(s,x)
-  indY = I(s,y)
-  
-  findToken = lambda str,x,y : str[indX:indY+len(y)] if indX != None and indY != None and indX < indY else None
+  findToken = lambda text,x,y : text[I(text,x):I(text,y)+len(y)] if I(text,x) != None and I(text,y) != None and I(text,x) < I(text,y) else None
     
   return s.replace(findToken(s,x,y),z) if findToken(s,x,y) != None else s
 
