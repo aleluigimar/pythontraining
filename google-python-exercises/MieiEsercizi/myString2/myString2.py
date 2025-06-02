@@ -30,8 +30,20 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
+  # +++your code here+++  
+  return replaceBetweenTokens(s, 'not', 'bad', 'good')
+
+
+def replaceBetweenTokens(s,x,y,z):
   # +++your code here+++
-  return
+  I = lambda text,x : text.index(x) if len(text)>1 and text.find(x) != -1 else None
+  
+  indX = I(s,x)
+  indY = I(s,y)
+  
+  findToken = lambda str,x,y : str[indX:indY+len(y)] if indX != None and indY != None and indX < indY else None
+    
+  return s.replace(findToken(s,x,y),z) if findToken(s,x,y) != None else s
 
 
 # F. front_back
