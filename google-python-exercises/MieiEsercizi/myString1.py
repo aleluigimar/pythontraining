@@ -25,10 +25,7 @@
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
   # +++your code here+++
-  
-  message = 'Number of donuts: '
-  countToPrint = count if count <= 10 else 'many'
-  return message + str(countToPrint)
+  return 'Number of donuts: ' + str(count if count < 10 else 'many')
 
 
 # B. both_ends
@@ -52,11 +49,7 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
   # +++your code here+++
-  sch = s[0]
-  s = s.replace(sch, '*')
-  s = sch + s[-1:]
-    
-  return s
+  return s[0] + s.replace(s[0], '*')[1:]
 
 
 # D. MixUp
