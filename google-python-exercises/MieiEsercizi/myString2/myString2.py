@@ -55,7 +55,13 @@ def replaceBetweenTokens(s,x,y,z):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
   # +++your code here+++
-  return
+  m = lambda x: (len(x) + 1) // 2
+  getTokens = lambda x: (x[:m(x)],x[m(x):])
+  
+  aTokens = getTokens(a)
+  bTokens = getTokens(b)  
+  
+  return aTokens[0] + bTokens[0] + aTokens[1] + bTokens[1]
 
 
 # Simple provided test() function used in main() to print
