@@ -35,7 +35,10 @@ def match_ends(words):
 # before combining them.
 def front_x(words):
   # +++your code here+++
-  return
+  x_list = sorted (w for w in words if w[0] == 'x')
+  other_list = sorted(w for w in words if w[0] != 'x')
+  return x_list + other_list
+  #alternative: return sorted(words, key=lambda w: (w[0] != 'x', w))
 
 
 
